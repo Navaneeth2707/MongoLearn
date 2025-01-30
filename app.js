@@ -17,19 +17,25 @@ const connecToDatabase = async () => {
 };
 const accountCollection = client.db("learndb").collection("Cluster0")
 const sampleData= 
-{
-    accuunt_name : "navaneeth",
+[
+  {  accuunt_name : "navaneeth",
     aid : "QQKMKM",
     type : "saving",
     balance : 10000,
     last_update : new Date(),
-
-}
+},
+{  accuunt_name : "navaneeth",
+    aid : "QQKMKM",
+    type : "saving",
+    balance : 10000,
+    last_update : new Date(),
+},
+]
 
 const main =async () =>{
     try{
         await connecToDatabase();
-        let result=await accountCollection.insertOne(sampleData);
+        let result=await accountCollection.insertMany(sampleData);
          console.log(result);
     }catch(err)
     {
