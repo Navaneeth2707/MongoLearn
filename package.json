@@ -1,0 +1,23 @@
+{
+  "name": "mongolearn",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Navaneeth2707/MongoLearn.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Navaneeth2707/MongoLearn/issues"
+  },
+  "homepage": "https://github.com/Navaneeth2707/MongoLearn#readme",
+  "description": "",
+  "dependencies": {
+    "mongodb": "^6.12.0"
+  }
+}
