@@ -16,26 +16,34 @@ const connecToDatabase = async () => {
     }
 };
 const accountCollection = client.db("learndb").collection("Cluster0")
-const sampleData= 
-[
-  {  accuunt_name : "navaneeth",
-    aid : "QQKMKM",
-    type : "saving",
-    balance : 10000,
-    last_update : new Date(),
-},
-{  accuunt_name : "navaneeth",
-    aid : "QQKMKM",
-    type : "saving",
-    balance : 10000,
-    last_update : new Date(),
-},
-]
+// const sampleData= 
+// [
+//   {  accuunt_name : "cdc",
+//     aid : "dvsz",
+//     type : "saving",
+//     balance : 10424000,
+//     last_update : new Date(),
+// },
+// {  accuunt_name : "navfdvxdvaneetdfh",
+//     aid : "xcvxvdfv",
+//     type : "saving",
+//     balance : 1070,
+//     last_update : new Date(),
+// },
+// ]
+const documuntstofind ={balance:{ $gt:1000}}
 
 const main =async () =>{
     try{
         await connecToDatabase();
-        let result=await accountCollection.insertMany(sampleData);
+
+      let result=  await accountCollection.find(documuntstofind).toArray();
+       
+      let docCount =await accountCollection.countDocuments(documuntstofind)
+
+      await result.forEach(doc =>console.log(doc));
+
+         console.log(`doc found${docCount}`);
          console.log(result);
     }catch(err)
     {
