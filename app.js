@@ -49,7 +49,7 @@ const main =async () =>{
 
     //      console.log(`doc found${docCount}`);
     //      console.log(result);
-    let result=await accountCollection.updateOne(documuntstoUpadate,update);
+    let result=await accountCollection.deleteMany(update);
     console.log(result);
     }catch(err)
     {
