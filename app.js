@@ -35,6 +35,7 @@ const accountCollection = client.db("learndb").collection("Cluster0")
 
 // const documuntstofind ={balance:{ $gt:1000}}
 
+
 const documuntstoUpadate ={_id: new ObjectId("679b78c2294989433aaf302c")} 
 const update ={ $inc:{balance:100}};
 const main =async () =>{
